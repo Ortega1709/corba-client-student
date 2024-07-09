@@ -1,0 +1,18 @@
+module StudentApp {
+        struct Student {
+            string name;
+            string matricule;
+            string date;
+            string promotion;
+        };
+
+        typedef sequence<Student> studentSeq;
+
+        interface StudentManagement {
+            studentSeq students();
+            studentSeq getStudentsByPromotion(in string promotion);
+            void add(in string matricule, in string promotion, in string naissance, in string nom);
+            void changePromotion(in string matricule, in string promotion);
+            void changeDate(in string matricule, in string date);
+        };
+};
